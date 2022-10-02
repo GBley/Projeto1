@@ -1,0 +1,36 @@
+.header {
+  max-width: 1200px; /* tamanho máximo do site */
+  padding: 40px 20px; /* desgrudar itens das margens */
+  margin: 0 auto; /* alinhar o conteúdo */
+  display:flex; /* um item ao lado do outro */
+  justify-content: space-between; /*espaçar, um item em cada canto */
+  align-items: center; /* alinhar um item ao centro do outro */
+}
+
+.header-menu {
+  display: flex; /* um item ao lado do outro */
+  flex-wrap: wrap; /* quebrar a linha caso seja diminuído mais que o tamanho dele */
+  gap: 10px; /* aumentar a distância entre os itens */
+  justify-content: center;
+}
+
+.header-menu a {
+  font-size: 1.125rem; /* no projeto é 18px, então em rem é 18/16 */
+  line-height: 1.3; /* altura de linha */
+  padding: 10px 20px; /* aumenta a área de clique dos links*/
+  text-decoration: none; /* remove o sublinhado padrão dos links*/
+  color: #141414;
+  display: block; /* para pegar corretamente os valores dos paddings */
+}
+
+@media (max-width: 800px) { /* ajustar o site para quando a tela for menor de 800px*/
+  .header {
+    flex-direction: column; /* muda a direção do texo e define como coluna */
+    gap: 40px;
+    padding: 20px;
+  }
+  .header a{
+    background: #f5f5f5; /* deixa visível a área de clique */
+    border-radius: 4px; /* arredonda as bordas*/
+  }
+}

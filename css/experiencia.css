@@ -1,0 +1,111 @@
+.experiencia {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+}
+
+.experiencia .subtitulo {
+  color: #e0e0e0;
+}
+
+.experiencia-texto {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+  color: #525252
+}
+
+.experiencia-texto strong {
+  color:#141414 /* para ter um contraste entre o que está em negrito com o restante do texto */
+}
+
+.empresa {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dividir o conteudo em duas colunas */
+  gap: 10px 20px; /* valores para vertial e horizontal */
+  padding: 20px;
+  background: #f5f5f5;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  position: relative; /* adicionado por conta do position absolute do empresa-ano */
+}
+
+.empresa::before { /* detalhe em ver ao lado dos itens da experiencia */
+content: '';
+display: block;
+width: 4px;
+height: 20px;
+background: linear-gradient(#b6f829, #67dd0a); /* assim como está ele empurra o item para a segunda coluna, então para remove-lo do fluxo atribuimos position absolute */
+position: absolute;
+top: 20px; /* mesma medida do padding, assim fica na mesma altura que o texto ao lado */
+left: -4px; /* -4px pois é exatamente a largura desse detalhe  */
+} 
+
+.empresa-ano {
+  position: absolute;
+  top: 22px;
+  left: -100px;
+  text-align: right;
+  width: 80px; /* adicionado para que o item fosse aproximado item ao lado */
+  color: #525252;
+  font-size: .875rem;
+}
+
+.empresa-titulo {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: bold;/* adiconado por conta do span, para ficar em negrito também */
+}
+
+.empresa-texto {
+  font-size: .875rem;
+  line-height: 1.4;
+  color: #525252
+}
+
+.empresa-habilidades { /* é uma lista co um item ao lado do outro, sendo assim é um display flex */
+display: flex;
+flex-wrap: wrap; /* quebra caso não caiba todos os itens na tela */
+gap: 10px;
+align-content: start; /* alinha todos ao início */
+}
+
+.empresa-habilidades li {
+  font-size: .875rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 5px 10px;
+}
+
+@media (max-width: 800px) {
+  .experiencia {
+    grid-template-columns: 1fr;
+    gap: 40px
+  }
+  .experiencia .subtitulo {
+    color: #141414;
+  }
+  .experiencia-texto {
+    font-size: 1.25rem;
+  }
+  .empresa-ano {
+    position: initial;
+    order: 1;
+    width: initial;
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+.empresa {
+  grid-template-columns: 1fr;
+}
+
+
+
+}

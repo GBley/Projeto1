@@ -1,0 +1,63 @@
+.introducao {
+  max-width: 1200px; /* tamanho máximo do site*/
+  padding: 40px 20px; /* desgrudar o item das margens */
+  margin: 0 auto; /* para alinhar os itens*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* tamanho que o item ocupa, com base no projeto de design */
+  gap: 100px; /* distância entre os itens*/
+  align-items: center; /* alinha um item ao outro*/
+}
+
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125; /* relativo ao valor do font-size*/
+  margin-bottom: 30px;
+  position: relative; /* adicionado por conta da imagem detalhe abaixo que será position absolute */
+}
+
+.introducao h1::before { /* adicionar o detalhe colorido*/
+  content:'';
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url('../img/detalhe.svg') no-repeat center;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1; /* adiciona o elemento atrás */
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) { /* quando tela for menor que 1000px reduzir tamanho da fonte */
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .introducao h1 {
+    font-size: 2rem;
+  }
+  .introducao h1::before {
+    width: 30px;
+    height: 10px;
+    left:0px;
+  }
+}
+
+@media (max-width: 400px) { /* abaixo de 400px remover a imagem e o espaço que ela ocupava de 1fr */
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+body {
+  font-family: 'Fira Sans', Arial, sans-serif;
+  margin: 0px;
+  color: #141414;
+  /* margin-bottom: 1000px;apenas temporário para visualizar melhor a página */
+  }
+
+h1, 
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.subtitulo {
+  font-size: 8rem;
+  line-height: 1; /* aproxima as letras */
+  text-transform: uppercase; /* transforma o texto em maiúsculo */
+  word-break: break-all; /* quebra palavras automatiamente */
+  max-width: 4ch; /* ch é o caractere zero, quando aumentar a tela irá quebrar o texto em 4 caractere, mas caso o caractere seja grande pode não cortar em 4 e sim em menos */
+}
+
+@media (max-width: 800px) {
+.subtitulo {
+  font-size: 3rem;
+  text-transform: capitalize;
+   max-width: initial !important; /* adicionado o important para que o 5ch do formação não se sobreponha e o texto seja quebrado em tela menor de 800px */
+}
+
+
+}
